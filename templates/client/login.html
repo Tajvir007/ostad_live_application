@@ -1,0 +1,53 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="sign-in">
+    <div class="global-shape" data-aos="fade-left" data-aos-duration="700" data-aos-delay="200">
+        <img src="assets/img/shapes/shape-1.png" alt="">
+    </div>
+    <div class="container">
+        <div class="row ustify-content-center">
+            <div class="col-md-3"> </div>
+            <div class="col-md-6 col-12" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-easing="ease-in">
+                <div class="poklotto-form">
+                    <h3 class="title">Login to Baji10</h3>
+                    <div class="part-form">
+                        <form method="post" action="/account/login/">
+                            <div class="row">
+                                {% csrf_token %}
+                                <div class="col-xl-12">
+                                    <label for="email" class="form-label"><span>Email</span></label>
+                                    <input type="email" id="email" placeholder="Email" name="email">
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="last_name" class="form-label"><span>Password</span></label>
+                                    <input type="password" id="last_name" placeholder="Password here..." name="password">
+                                </div>
+                            </div>
+                            <div class="part-submit">
+                                <button class="prd-btn-1">
+                                    sign In <i class="fa-duotone fa-arrow-right"></i>
+                                </button>
+                                <p>No account yet in Baji10?<br/>
+                                    <a class='reg-link' href='register.html'>Register</a> here to signup.</p>
+                            </div>
+                        </form>
+                        {% if messages %}
+                            <div class="alert alert-danger mt-1" role="alert">
+                                {% for message in messages %}
+                                {{ message }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

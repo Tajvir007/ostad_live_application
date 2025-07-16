@@ -1,0 +1,316 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/client/dashboard/assets/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'client/dashboard/header.html' %}
+
+<div class="db-elements">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="single-db-element">
+                    <h4 class="title">
+                        <span class="icon"><i class="fa-duotone fa-circle-dollar-to-slot"></i></span>
+                        <span class="text">Transaction history</span>
+                    </h4>
+                    
+                    <div class="sports-body">
+                        <div class="playing-sports-all no-tabs-here">
+                            <div class="single-tournament">
+                                <div class="tournament-title"></div>
+                                <div class="all-tournament-match all-bet-history">
+                                    <div class="single-t-match bet-history">
+                                        <div class="trnx-type">
+                                            <span class="icon"><i class="fa-solid fa-arrow-up-long"></i></span>
+                                            <span class="text">Receipt of payment</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">350.22 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">1 dec 2022</span>
+                                            <span class="time">5:15 am</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876881</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon"><i class="fa-solid fa-arrow-up-long"></i></span>
+                                            <span class="text">deposit</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">425.11 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">06 sep 2021</span>
+                                            <span class="time">3:46 pm</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876882</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon"><i class="fa-solid fa-arrow-up-long"></i></span>
+                                            <span class="text">Deposit</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">124.46 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">21 sep 2021</span>
+                                            <span class="time">1:02 pm</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876883</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon down"><i class="fa-solid fa-arrow-down-long"></i></span>
+                                            <span class="text">E-Transfer</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">354.84 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">16 sep 2021</span>
+                                            <span class="time">5:26 pm</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876884</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon"><i class="fa-solid fa-arrow-up-long"></i></span>
+                                            <span class="text">Receipt of payment</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">425.57 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">29 sep 2021</span>
+                                            <span class="time">5:15 pm</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876885</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon"><i class="fa-solid fa-arrow-up-long"></i></span>
+                                            <span class="text">Receipt of payment</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">245.95 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">11 sep 2021</span>
+                                            <span class="time">2:31 pm</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876886</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon"><i class="fa-solid fa-arrow-up-long"></i></span>
+                                            <span class="text">deposit</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">386.38 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">03 sep 2021</span>
+                                            <span class="time">1:32 pm</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876887</span>
+                                        </div>
+                                    </div>
+                                    <div class="single-t-match">
+                                        <div class="trnx-type">
+                                            <span class="icon down"><i class="fa-solid fa-arrow-down-long"></i></span>
+                                            <span class="text">E-Transfer</span>
+                                        </div>
+                                        <div class="bet-amount">
+                                            <span class="text">967.14 USD</span>
+                                        </div>
+                                        <div class="bet-gateway">
+                                            <span class="text">E-Wallets</span>
+                                        </div>
+                                        <div class="date-n-time">
+                                            <span class="date">19 sep 2021</span>
+                                            <span class="time">5:15 am</span>
+                                        </div>
+                                        <div class="trnx-id">
+                                            <span class="trnx-id-number">Trn_6837876888</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<!-- appear js -->
+<script src="{% static '/client/dashboard/assets/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+    chart: {
+        height: 276,
+        type: "area",
+        zoom: {
+        enabled: false
+        },
+        toolbar: {
+        show: false
+        }, 
+        fontFamily: 'Asap, Arial, sans-serif'
+    },
+    legend: {
+        show: false
+    },
+    grid: {
+        show: false,
+        padding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: -10
+        },  
+    },
+    dataLabels: {
+        enabled: false,
+        style: {
+        fontSize: '20px',
+        fontFamily: 'Asap, Arial, sans-serif',
+        fontWeight: 'bold',
+        colors: undefined
+    },
+    },
+    series: [
+        {
+        name: "Win",
+        data: [0, 350, 150, 300, 80, 250, 0]
+        },
+        {
+        name: "Loss",
+        data: [900, 700, 1000, 660, 880, 700, 1000]
+        },
+        {
+        name: "Profit",
+        data: [600, 220, 580, 50, 400, 800, 600]
+        }
+    ],
+    fill: {
+        type: "gradient",
+        gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.45,
+        opacityTo: 0.1,
+        stops: [0, 90, 100]
+        }
+    },
+    xaxis: {
+        categories: [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+        ],
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+        },
+        axisBorder: {
+            show: false,
+            color: '#78909C',
+            offsetX: 0,
+            offsetY: 0
+        },
+    },
+    yaxis: {
+        min: 0,
+        max: 1000,
+        tickAmount: 5,
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                // cssClass: 'apexcharts-xaxis-label',
+                cssClass: 'noce',
+            },
+        }
+    },
+    responsive: [
+        {
+            breakpoint: 1400,
+            options: {
+                chart: {
+                    height: 256
+                },
+                legend: {
+                position: "bottom"
+                }
+            },
+        }
+    ]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+</script>
+{% endblock %}

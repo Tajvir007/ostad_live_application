@@ -1,0 +1,374 @@
+{% extends '../superadmin/partials/base.html' %}
+
+{% block title %}Baji10 - Superadmin{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <div class="row">
+
+        <!-- Left side columns -->
+        <div class="col-12">
+          <div class="row">
+
+             <!-- Sales Card -->
+             <div class="col-xxl-3 col-md-4">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Users</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card revenue-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Active Users</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-3 col-md-4">
+
+              <div class="card info-card customers-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Today Joined User</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- End Customers Card -->
+
+            <!-- Sales Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Clubs</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-person-lines-fill"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Sales Card -->
+
+            <!-- Sales Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">User Balance</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card revenue-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Club Balance</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-3 col-md-4">
+
+              <div class="card info-card customers-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Balance</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- End Customers Card -->
+
+            <!-- Sales Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Withdraw Pending</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cursor"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card revenue-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Bet Pending</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Revenue Card -->
+
+            <!-- Customers Card -->
+            <div class="col-xxl-3 col-md-4">
+
+              <div class="card info-card customers-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Total Profit</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <!-- End Customers Card -->
+
+            <!-- Sales Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card sales-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Today Deposit</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-3 col-md-4">
+              <div class="card info-card revenue-card">
+
+                <div class="card-body">
+                  <h5 class="card-title">Today Withdraw</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- End Revenue Card -->
+
+            <!-- Top Selling -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Payment System</h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">For</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Number</th>
+                        <th scope="col">Bonus Level</th>
+                        <th scope="col">Bonus Rate</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>12</th>
+                        <th scope="row"><a href="#"><img src="https://mybd.cloud/assets/icons/bkash.png" alt=""></a></th>
+                        <td>Deposit</td>
+                        <td>Bkash</td>
+                        <td class="fw-bold">01736506590</td>
+                        <td>0</td>
+                        <td>1.5</td>
+                        <td>Edit</td>
+                      </tr>
+                      <tr>
+                        <th>12</th>
+                        <th scope="row"><a href="#"><img src="https://mybd.cloud/assets/icons/bkash.png" alt=""></a></th>
+                        <td>Deposit</td>
+                        <td>Bkash</td>
+                        <td class="fw-bold">01736506590</td>
+                        <td>0</td>
+                        <td>1.5</td>
+                        <td>Edit</td>
+                      </tr>
+                      <tr>
+                        <th>12</th>
+                        <th scope="row"><a href="#"><img src="https://mybd.cloud/assets/icons/nagad.png" alt=""></a></th>
+                        <td>Deposit</td>
+                        <td>Bkash</td>
+                        <td class="fw-bold">01736506590</td>
+                        <td>0</td>
+                        <td>1.5</td>
+                        <td>Edit</td>
+                      </tr>
+                      <tr>
+                        <th>12</th>
+                        <th scope="row"><a href="#"><img src="https://mybd.cloud/assets/icons/nagad.png" alt=""></a></th>
+                        <td>Deposit</td>
+                        <td>Bkash</td>
+                        <td class="fw-bold">01736506590</td>
+                        <td>0</td>
+                        <td>1.5</td>
+                        <td>Edit</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
+
+          </div>
+        </div><!-- End Left side columns -->
+
+      </div>
+    </section>
+
+  </main>
+{% endblock %}

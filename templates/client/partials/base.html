@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+    
+<!-- Mirrored from peredion.netlify.app/index-8 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jul 2024 04:44:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %} {% endblock %}</title>
+        <!-- favicon -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/bootstrap.min.css' %}">
+        <!-- animate css -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/animate.css' %}">
+        <link rel="stylesheet" href="{% static '/client/assets/css/animate.min.css' %}">
+        <!-- load all Font Awesome styles -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/all.min.css' %}">
+        <!-- owl carousel css -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/owl.carousel.min.css' %}">
+        <!-- odometer css -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/odometer.min.css' %}">
+        <!-- overlay scrollbar css -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/OverlayScrollbars.min.css' %}">
+        <!-- modal video popup css -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/modal-video.min.css' %}">
+        <!-- aos css -->
+        <link href="{% static '/client/assets/css/aos.css' %}" rel="stylesheet">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static '/client/assets/css/style.css' %}">
+        {% block style %} {% endblock %}
+    </head>
+    <body>
+
+        <!-- header begin -->
+        <div class="header header-4">
+            <div class="mobile-navbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-xl-none col-lg-none col-md-block d-flex align-items-center">
+                            <a class='mobile-logo' href='{% url "client:index" %}'>
+                                <img src="{% static '/client/assets/img/logo/logo.png' %}" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-xl-none col-lg-none col-lg-block">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fa-light fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mainmenu">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="scalation">
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-2 d-xl-flex d-lg-flex justify-content-center d-md-none">
+                                        <div class="logo-4">
+                                            <a href='{% url "client:index" %}'>
+                                                <img src="{% static '/client/assets/img/logo/logo.png' %}" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-lg-10">
+                                        <ul class="navbar-nav nn-left nn-left-2">
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'client:index' %}">Home</a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link {% if request.resolver_match.url_name == 'about-us' %}active{% endif %}" href="{% url 'client:about-us' %}">About Us</a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}" href="{% url 'client:contact' %}">Contact</a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link {% if request.resolver_match.url_name == 'faq' %}active{% endif %}" href="{% url 'client:faq' %}">FAQ</a>
+                                            </li>
+                                            
+
+                                            {% if user.is_authenticated %}
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="{% url 'account:logout' %}" role="button" aria-expanded="false">
+                                                    Logout
+                                                </a>
+                                            </li>
+
+                                            {% else %}
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="{% url 'account:login' %}" role="button" aria-expanded="false">
+                                                    Login
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link" href="{% url 'account:register' %}" role="button" aria-expanded="false">
+                                                    Register
+                                                </a>
+                                            </li>
+                                            {% endif %}
+                                            {% if user.is_superuser %}
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="game-control/bet-control/" id="dashboardDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    admin panel
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                                                    <li><a class='dropdown-item' href='{% url "game_control:bet_control" %}'>bet control</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "game_control:game_category" %}'>Game Category</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "game_control:tournament" %}'>tournament</a></li>
+                                                </ul>
+                                            </li>
+                                            {% else %}
+                                            {% if user.is_authenticated %}
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    dashboard
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                                                    <li><a class='dropdown-item' href='{% url "client:overview" %}'>overview <small>(index)</small></a></li>
+                                                    <li><a class='dropdown-item' href='{% url "client:bet_history" %}'>bet history</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "client:transaction_history" %}'>transaction</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "client:deposit" %}'>deposit</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "client:withdraw" %}'>withdrawal</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "client:refferal" %}'>referral</a></li>
+                                                    <li><a class='dropdown-item' href='{% url "client:settings" %}'>settings</a></li>
+                                                </ul>
+                                            </li>
+                                            {% endif %}
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- header end -->
+    
+        <!-- playing bet begin -->
+        {% block content %} {% endblock %}
+        <!-- playing bet end -->
+
+        <!-- footer begin -->
+        <div class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-9">
+                            <div class="part-about">
+                                <div class="footer-logo" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-easing="ease-in">
+                                    <a href='index.html'>
+                                        <img src="assets/img/logo/logo.png" alt="" class="logo">
+                                    </a>
+                                </div>
+                                <p data-aos="fade-up" data-aos-delay="150" data-aos-duration="500" data-aos-easing="ease-in">This allows bettors to bet over or under the bookmaker's score,<br/> and indicate what they believe the difference in points will be.</p>
+                                <ul class="importants-links">
+                                    <li class="single-link" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in">
+                                        <a href="#0">policy</a>
+                                    </li>
+                                    <li class="single-link" data-aos="fade-up" data-aos-delay="250" data-aos-duration="500" data-aos-easing="ease-in">
+                                        <a href="#0">Terms</a>
+                                    </li>
+                                    <li class="single-link" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500" data-aos-easing="ease-in">
+                                        <a href="#0">license</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-content">
+                        <p class="copyright-text">Copyright © 2023. All Right Reserved By Baji10</p>
+                        <ul class="social-link">
+                            <li class="single-social">
+                                <a href="#0">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="single-social">
+                                <a href="#0">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="single-social">
+                                <a href="#0">
+                                    <i class="fa-brands fa-pinterest-p"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="footer-menu">
+                            <ul>
+                                <li>
+                                    <a class='single-menu' href='index.html'>homepage</a>
+                                </li>
+                                <li>
+                                    <a class='single-menu' href='about.html'>About Us</a>
+                                </li>
+                                <li>
+                                    <a href="lotteries.html" class="single-menu">Lotteries</a>
+                                </li>
+                                <li>
+                                    <a class='single-menu' href='blog-posts.html'>Blog</a>
+                                </li>
+                                <li>
+                                    <a class='single-menu' href='contact.html'>contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer end -->
+
+        <!-- back to button begin -->
+        <div class="back-to-top-btn">
+            <a href="#">
+                <i class="fa-light fa-turn-up"></i>
+            </a>
+        </div>
+        <!-- back to top button end -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <!-- jQuery js -->
+        <script src="{% static '/client/assets/js/jquery-3.6.0.min.js' %}"></script>
+        <!-- bootstrap js -->
+        <script src="{% static '/client/assets/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- owl carousel js -->
+        <script src="{% static '/client/assets/js/owl.carousel.min.js' %}"></script>
+        <!-- live clock js -->
+        <script src="{% static '/client/assets/js/clock.min.js' %}"></script>
+        <!-- appear js -->
+        <script src="{% static '/client/assets/js/jquery.appear.min.js' %}"></script>
+        <!-- odometer js -->
+        <script src="{% static '/client/assets/js/odometer.min.js' %}"></script>
+        <!-- overlayScrollbars js -->
+        <script src="{% static '/client/assets/js/jquery.overlayScrollbars.min.js' %}"></script>
+        <!-- aos js -->
+        <script src="{% static '/client/assets/js/aos.js' %}"></script>
+        <!-- modal video popup -->
+        <script src="{% static '/client/assets/js/modal-video.min.js' %}"></script>
+        <!-- main script js -->
+        <script src="{% static '/client/assets/js/main.js' %}"></script>
+        <!-- placing bet js -->
+        <script src="{% static '/client/assets/js/placing-bet.js' %}"></script>
+
+        {% block script %} {% endblock %}
+    </body>
+
+<!-- Mirrored from peredion.netlify.app/index-8 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jul 2024 04:44:47 GMT -->
+</html>

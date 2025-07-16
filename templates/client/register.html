@@ -1,0 +1,82 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="sign-up">
+    <div class="global-shape style-3">
+        <img src="assets/img/shapes/shape-1.png" alt="" data-aos="fade-left" data-aos-duration="500" data-aos-offset="200" data-aos-easing="ease-in" data-aos-delay="400">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-10" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500" data-aos-easing="ease-in">
+                <div class="poklotto-form" id="poklotto_register_form">
+                    <h3 class="steps-heading-title title">Getting started</h3>
+                    <div class="part-form">
+                        <form method="post" action="/account/register/" id="register-form">
+                            {% csrf_token %}
+                            <div class="form-all-step">
+                                <div class="first-step-form per-step animate__animated blanked">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                            <label for="first_name" class="form-label"><span>Email</span></label>
+                                            <input type="text" id="username" placeholder="Email" name="email">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                            <label for="last_name" class="form-label"><span>Phone</span></label>
+                                            <input type="text" id="phone" placeholder="Phone number" name="phone">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <label for="mail_address" class="form-label"><span>Sponsor Email</span></label>
+                                            <input type="email" id="sponsor_username" placeholder="Sponsor Useranme" name="sponsor_email">
+                                        </div>
+                                        
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <label for="mail_address" class="form-label"><span>Password</span></label>
+                                            <input type="password" id="sponsor_username" placeholder="Sponsor Useranme" name="password">
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-6">
+                                            <label class="form-label" for="club-select"><span>Select Club</span></label>
+
+
+
+                                          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="club-select" name="club">
+                                                <button class="dropdown-toggle" type="button" id="gender-select" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Select Club
+                                                </button>
+
+                                                {% for i in clubs %}
+                                                <option value="{{i.id}}">{{i.name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-controller">
+                                <button class="prd-btn-1" id="nxt-stp-btn" type="submit" form="register-form">
+                                    Sing Up <i class="fa-duotone fa-arrow-right"></i>
+                                </button>
+                            </div>
+                            {% if messages %}
+                            <div class="alert alert-danger mt-1" role="alert">
+                                {% for message in messages %}
+                                {{ message }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static '/client/assets/date-p/mc-calendar.min.js' %}"></script>
+{% comment %} <script src="{% static '/client/assets/js/register.js' %}"></script> {% endcomment %}
+{% endblock %}

@@ -1,0 +1,249 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/client/dashboard/assets/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'client/dashboard/header.html' %}
+
+<div class="db-elements">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7">
+                <div class="single-db-element">
+                    <h4 class="title">
+                        <span class="icon wallet">
+                            <img src="assets/img/icon/wallet-deposit.png" alt="">
+                        </span>
+                        <span class="text">withdraw your money</span>
+                    </h4>
+                    <div class="withdraw-money">
+                        <div class="row g-0">
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+                                <div class="part-form">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                                <label for="first_name" class="form-label"><span>Enter amount</span></label>
+                                                <input type="text" id="first_name" placeholder="ex: 5042.00">
+                                            </div>
+                                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                                <label class="form-label"><span>select your payment wallet</span></label>
+                                                <div class="dropdown select-list wallet-select">
+                                                    <button class="dropdown-toggle" type="button" id="wallet-select" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Bitcoin (BTC)
+                                                    </button>
+                                                    <ul class="dropdown-menu" aria-labelledby="wallet-select">
+                                                        <li><a class="dropdown-item active" href="#">Bitcoin (BTC)</a></li>
+                                                        <li><a class="dropdown-item" href="#">Ethereum (ETH) </a></li>
+                                                        <li><a class="dropdown-item" href="#">Litecoin (LTC)</a></li>
+                                                        <li><a class="dropdown-item" href="#">Local (USD)</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="prd-btn-1">
+                                            withdraw <i class="fa-duotone fa-arrow-right"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
+                                <div class="all-balance">
+                                    <div class="single-balance">
+                                        <div class="part-currency">
+                                            <div class="icon">
+                                                <img src="assets/img/currency/cur-1.png" alt="">
+                                            </div>
+                                            <div class="info">
+                                                <span class="descr">currency name:</span>
+                                                <span class="name">Bitcoin </span>
+                                            </div>
+                                        </div>
+                                        <div class="part-balance">
+                                            <div class="single-info">
+                                                <span class="descr">net balance :</span>
+                                                <span class="name">1,025.20 BTC</span>
+                                            </div>
+                                            <div class="single-info">
+                                                <span class="descr">of withdrawable :</span>
+                                                <span class="name">920.00 BTC</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5">
+                <div class="single-db-element">
+                    <h4 class="title">
+                        <span class="icon wallet">
+                            <img src="assets/img/icon/wallet-insert.png" alt="">
+                        </span>
+                        <span class="text">insert a new  wallet</span>
+                    </h4>
+                    <div class="part-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-6">
+                                    <label for="holder_first_name" class="form-label"><span>account holder name</span></label>
+                                    <input type="text" id="holder_first_name" placeholder="ex: Haden Rees">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-6">
+                                    <label for="last_name" class="form-label"><span>Card number</span></label>
+                                    <input type="text" id="last_name" placeholder="ex: 0000 0000 0000 0000">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-6">
+                                    <label for="expiry_date" class="form-label"><span>expiry date</span></label>
+                                    <input type="text" id="expiry_date" placeholder="ex: 02/26">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-6">
+                                    <label for="phone_number" class="form-label"><span>CVV</span></label>
+                                    <input type="text" id="phone_number" placeholder="ex: 210">
+                                </div>
+                            </div>
+                            <button class="prd-btn-1">
+                                Add wallet <i class="fa-duotone fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<!-- appear js -->
+<script src="{% static '/client/dashboard/assets/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+    chart: {
+        height: 276,
+        type: "area",
+        zoom: {
+        enabled: false
+        },
+        toolbar: {
+        show: false
+        }, 
+        fontFamily: 'Asap, Arial, sans-serif'
+    },
+    legend: {
+        show: false
+    },
+    grid: {
+        show: false,
+        padding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: -10
+        },  
+    },
+    dataLabels: {
+        enabled: false,
+        style: {
+        fontSize: '20px',
+        fontFamily: 'Asap, Arial, sans-serif',
+        fontWeight: 'bold',
+        colors: undefined
+    },
+    },
+    series: [
+        {
+        name: "Win",
+        data: [0, 350, 150, 300, 80, 250, 0]
+        },
+        {
+        name: "Loss",
+        data: [900, 700, 1000, 660, 880, 700, 1000]
+        },
+        {
+        name: "Profit",
+        data: [600, 220, 580, 50, 400, 800, 600]
+        }
+    ],
+    fill: {
+        type: "gradient",
+        gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.45,
+        opacityTo: 0.1,
+        stops: [0, 90, 100]
+        }
+    },
+    xaxis: {
+        categories: [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+        ],
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+        },
+        axisBorder: {
+            show: false,
+            color: '#78909C',
+            offsetX: 0,
+            offsetY: 0
+        },
+    },
+    yaxis: {
+        min: 0,
+        max: 1000,
+        tickAmount: 5,
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                // cssClass: 'apexcharts-xaxis-label',
+                cssClass: 'noce',
+            },
+        }
+    },
+    responsive: [
+        {
+            breakpoint: 1400,
+            options: {
+                chart: {
+                    height: 256
+                },
+                legend: {
+                position: "bottom"
+                }
+            },
+        }
+    ]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+</script>
+{% endblock %}

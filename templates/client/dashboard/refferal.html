@@ -1,0 +1,242 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/client/dashboard/assets/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'client/dashboard/header.html' %}
+
+<div class="db-elements">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="single-db-element">
+                    <h4 class="title">
+                        <span class="icon wallet">
+                            <img src="assets/img/icon/referral.png" alt="">
+                        </span>
+                        <span class="text">referral earnings</span>
+                    </h4>
+                    <div class="all-referral">
+                        <div class="row g-lg-4 g-2">
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="single-referral">
+                                    <span class="title">your upline</span>
+                                    <div class="descr">
+                                        <span class="text">baji10.url</span>
+                                        <span class="icon"><i class="fa-duotone fa-envelope"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="single-referral">
+                                    <span class="title">your referrals</span>
+                                    <div class="descr">
+                                        <span class="text">0 +</span>
+                                        <span class="icon"><i class="fa-duotone fa-users fa-sm"></i></span>
+                                        <span class="text">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="single-referral">
+                                    <span class="title">active referrals</span>
+                                    <div class="descr">
+                                        <span class="text">0 +</span>
+                                        <span class="icon"><i class="fa-duotone fa-users fa-sm"></i></span>
+                                        <span class="text">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                                <div class="single-referral">
+                                    <span class="title">total ref. earnings</span>
+                                    <div class="descr">
+                                        <span class="text">$253.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7">
+                <div class="single-db-element">
+                    <h4 class="title">
+                        <span class="icon refer">
+                            <img src="assets/img/icon/refer.png" alt="">
+                        </span>
+                        <span class="text">Refer Friend & Earn $40 Credit</span>
+                    </h4>
+                    <div class="refer-friend">
+                        <form data-aos="fade-up" data-aos-delay="250" data-aos-duration="500" data-aos-easing="ease-in">
+                            <input type="text" placeholder="Ex: yourmail@address" value="http://peredion.template/?refferal=AutWorks2018">
+                            <button class="prd-btn-1 submit-btn">copy <i class="fa-light fa-copy"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5">
+                <div class="single-db-element">
+                    <h4 class="title">
+                        <span class="icon social">
+                            <img src="assets/img/icon/social.png" alt="">
+                        </span>
+                        <span class="text">Share on social</span>
+                    </h4>
+                    <div class="social-links">
+                        <ul>
+                            <li>
+                                <a href="#0"><i class="fa-brands fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fa-brands fa-pinterest-p"></i></a>
+                            </li>
+                            <li>
+                                <a href="#0"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<!-- appear js -->
+<script src="{% static '/client/dashboard/assets/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+    chart: {
+        height: 276,
+        type: "area",
+        zoom: {
+        enabled: false
+        },
+        toolbar: {
+        show: false
+        }, 
+        fontFamily: 'Asap, Arial, sans-serif'
+    },
+    legend: {
+        show: false
+    },
+    grid: {
+        show: false,
+        padding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: -10
+        },  
+    },
+    dataLabels: {
+        enabled: false,
+        style: {
+        fontSize: '20px',
+        fontFamily: 'Asap, Arial, sans-serif',
+        fontWeight: 'bold',
+        colors: undefined
+    },
+    },
+    series: [
+        {
+        name: "Win",
+        data: [0, 350, 150, 300, 80, 250, 0]
+        },
+        {
+        name: "Loss",
+        data: [900, 700, 1000, 660, 880, 700, 1000]
+        },
+        {
+        name: "Profit",
+        data: [600, 220, 580, 50, 400, 800, 600]
+        }
+    ],
+    fill: {
+        type: "gradient",
+        gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.45,
+        opacityTo: 0.1,
+        stops: [0, 90, 100]
+        }
+    },
+    xaxis: {
+        categories: [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+        ],
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+        },
+        axisBorder: {
+            show: false,
+            color: '#78909C',
+            offsetX: 0,
+            offsetY: 0
+        },
+    },
+    yaxis: {
+        min: 0,
+        max: 1000,
+        tickAmount: 5,
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                // cssClass: 'apexcharts-xaxis-label',
+                cssClass: 'noce',
+            },
+        }
+    },
+    responsive: [
+        {
+            breakpoint: 1400,
+            options: {
+                chart: {
+                    height: 256
+                },
+                legend: {
+                position: "bottom"
+                }
+            },
+        }
+    ]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+</script>
+{% endblock %}

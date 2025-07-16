@@ -1,0 +1,194 @@
+{% extends '../../superadmin/partials/base.html' %}
+
+{% block title %}Manage Club - Superadmin{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Manage Club</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'superadmin:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Mangae Club</li>
+          </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <button type="button" class="btn text-light" style="background-color: #6575e8;" data-bs-toggle="modal" data-bs-target="#addClub">+ Add New</button>
+                            <div class="modal fade" id="addClub" tabindex="-1" aria-labelledby="addClub" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="editGameModalLabel">Add New Game</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <!-- Form to edit game details -->
+                                      <form>
+                                        <div class="mb-3">
+                                          <label for="gameTitle" class="form-label">Club Name</label>
+                                          <input type="text" class="form-control" id="gameTitle" placeholder="Enter club name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gameTitle" class="form-label">Club Username</label>
+                                            <input type="text" class="form-control" id="gameTitle" placeholder="Enter username">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gameTitle" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="gameTitle" placeholder="Enter your password">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="Description" class="form-label">Description</label>
+                                          <input type="text" class="form-control" id="Description" placeholder="Club description">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="status">Status</label>
+                                            <select name="" id="" class="form-control">
+                                                <option value="active">Active</option>
+                                                <option value="Deactive">Deactive</option>
+                                            </select>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="editClub" tabindex="-1" aria-labelledby="editClub" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="editGameModalLabel">Add New Game</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <!-- Form to edit game details -->
+                                      <form>
+                                        <div class="mb-3">
+                                          <label for="gameTitle" class="form-label">Club Name</label>
+                                          <input type="text" class="form-control" id="gameTitle" placeholder="Enter club name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gameTitle" class="form-label">Club Username</label>
+                                            <input type="text" class="form-control" id="gameTitle" placeholder="Enter username">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gameTitle" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="gameTitle" placeholder="Enter your password">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="Description" class="form-label">Description</label>
+                                          <input type="text" class="form-control" id="Description" placeholder="Club description">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="status">Status</label>
+                                            <select name="" id="" class="form-control">
+                                                <option value="active">Active</option>
+                                                <option value="Deactive">Deactive</option>
+                                            </select>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table datatable table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL No.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Club11</td>
+                                        <td>@club11</td>
+                                        <td>Test description</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2" data-bs-toggle="modal" data-bs-target="#addClub">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Hockey</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-warning">Deactive</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2" data-bs-toggle="modal" data-bs-target="#addClub">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Basketball</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2" data-bs-toggle="modal" data-bs-target="#addClub">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Chess</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2" data-bs-toggle="modal" data-bs-target="#addClub">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        
+                        
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+{% endblock %}

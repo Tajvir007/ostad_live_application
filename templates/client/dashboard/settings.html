@@ -1,0 +1,254 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/client/dashboard/assets/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'client/dashboard/header.html' %}
+
+<div class="db-elements">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12">
+                <div class="single-db-element setting-title-changed">
+                    <h4 class="title">
+                        <span class="icon wallet">
+                            <img src="{% static '/client/dashboard/assets/img/icon/edit-profile.png' %}" alt="">
+                        </span>
+                        <span class="text">edit haden’s profile</span>
+                    </h4>
+                    <div class="settings-element">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-12">
+                                <div class="nav flex-xl-column flex-md-row flex-column nav-pills settings-tab-button" id="settings-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="nav-link active settings-profile-tab" id="settings-profile-tab" data-bs-toggle="pill" data-bs-target="#settings-profile" type="button" role="tab" aria-controls="settings-profile" aria-selected="true"><i class="fa-regular fa-circle-info"></i> profile information</button>
+                                    <button class="nav-link settings-privacy-tab" id="settings-privacy-tab" data-bs-toggle="pill" data-bs-target="#settings-privacy" type="button" role="tab" aria-controls="settings-privacy" aria-selected="false"><i class="fa-regular fa-key"></i> Privacy Settings</button>
+                                    <button class="nav-link settings-account-tab" id="settings-account-tab" data-bs-toggle="pill" data-bs-target="#settings-account" type="button" role="tab" aria-controls="settings-account" aria-selected="false"><i class="fa-regular fa-user"></i> Account Settings</button>
+                                </div>
+                            </div>
+                            <div class="col-xl-9 col-lg-12">
+                                <div class="tab-content" id="settings-tabContent">
+                                    <div class="tab-pane fade show active" id="settings-profile" role="tabpanel" aria-labelledby="settings-profile-tab">
+                                        <div class="profile-setting">
+                                            <div class="part-pic">
+                                                <img src="{% static '/client/dashboard/assets/img/settings/pp.jpg' %}" alt="">
+                                            </div>
+                                            <div class="part-info">
+                                                <ul>
+                                                    <li>
+                                                        <span class="property">First Name :</span>   
+                                                        <span class="value">mr. Haden Rees </span>   
+                                                    </li>
+                                                    <li>
+                                                        <span class="property">Last Name :</span>   
+                                                        <span class="value">Rees</span>   
+                                                    </li>
+                                                    <li>
+                                                        <span class="property">Email Address :</span>   
+                                                        <span class="value">autworks2018@gmail.com</span>   
+                                                    </li>
+                                                    <li>
+                                                        <span class="property">Phone Numbers :</span>   
+                                                        <span class="value">+88 015 255 4365</span>   
+                                                    </li>
+                                                    <li>
+                                                        <span class="property">Website :</span>   
+                                                        <span class="value">baji10.url</span>   
+                                                    </li>
+                                                    <li>
+                                                        <span class="property">State :</span>   
+                                                        <span class="value">United Kingdom</span>   
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="settings-privacy" role="tabpanel" aria-labelledby="settings-privacy-tab">
+                                        <div class="privacy-settings">
+                                            <ul>
+                                                <li>
+                                                    <span class="title">Manage Email Notifications :</span>
+                                                    <button class="prd-btn-1 small">manage</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Manage Privacy Settings :</span>
+                                                    <button class="prd-btn-1 small">manage</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Personalize Ad Experience :</span>
+                                                    <button class="prd-btn-1 small">update</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Protect Your Account :</span>
+                                                    <button class="prd-btn-1 small">protect</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="settings-account" role="tabpanel" aria-labelledby="settings-account-tab">
+                                        <div class="privacy-settings">
+                                            <ul>
+                                                <li>
+                                                    <span class="title">Sync Watchlist to My Stuff :</span>
+                                                    <button class="prd-btn-1 small">sync</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Hold Your Subscription :</span>
+                                                    <button class="prd-btn-1 small">hold</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Cancel Your Subscription :</span>
+                                                    <button class="prd-btn-1 small">cancel</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Your Devices :</span>
+                                                    <button class="prd-btn-1 small">manage</button>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Referrals :</span>
+                                                    <button class="prd-btn-1 small">get $10</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+<!-- appear js -->
+<script src="{% static '/client/dashboard/assets/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+    chart: {
+        height: 276,
+        type: "area",
+        zoom: {
+        enabled: false
+        },
+        toolbar: {
+        show: false
+        }, 
+        fontFamily: 'Asap, Arial, sans-serif'
+    },
+    legend: {
+        show: false
+    },
+    grid: {
+        show: false,
+        padding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: -10
+        },  
+    },
+    dataLabels: {
+        enabled: false,
+        style: {
+        fontSize: '20px',
+        fontFamily: 'Asap, Arial, sans-serif',
+        fontWeight: 'bold',
+        colors: undefined
+    },
+    },
+    series: [
+        {
+        name: "Win",
+        data: [0, 350, 150, 300, 80, 250, 0]
+        },
+        {
+        name: "Loss",
+        data: [900, 700, 1000, 660, 880, 700, 1000]
+        },
+        {
+        name: "Profit",
+        data: [600, 220, 580, 50, 400, 800, 600]
+        }
+    ],
+    fill: {
+        type: "gradient",
+        gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.45,
+        opacityTo: 0.1,
+        stops: [0, 90, 100]
+        }
+    },
+    xaxis: {
+        categories: [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+        ],
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+        },
+        axisBorder: {
+            show: false,
+            color: '#78909C',
+            offsetX: 0,
+            offsetY: 0
+        },
+    },
+    yaxis: {
+        min: 0,
+        max: 1000,
+        tickAmount: 5,
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                // cssClass: 'apexcharts-xaxis-label',
+                cssClass: 'noce',
+            },
+        }
+    },
+    responsive: [
+        {
+            breakpoint: 1400,
+            options: {
+                chart: {
+                    height: 256
+                },
+                legend: {
+                position: "bottom"
+                }
+            },
+        }
+    ]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+</script>
+{% endblock %}

@@ -1,0 +1,559 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="modal fade" id="betModal" tabindex="-1" aria-labelledby="betModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="placing-bet-modal">
+            <div class="pb-modal-header">
+                <span class="modal-title">Place your bet</span>
+                <button class="prd-close-btn" data-bs-dismiss="modal"><i class="fa-light fa-xmark"></i></button>
+            </div>
+            <div class="pb-modal-body">
+                <div class="selected-team">
+                    <span class="slct-team-name">Dinamo Zagreb</span>
+                    <span class="slct-bet-ratio"></span>
+                </div>
+                <div class="selected-match">
+                    <div class="single-team">
+                        <span class="team-name">Dinamo Zagreb</span>
+                    </div>
+                    <img src="assets/img/playing-bet/icon/modal-vs.png" alt="" class="versace-icon">
+                    <div class="single-team">
+                        <span class="team-name">Bodo Glimt FC</span>
+                    </div>
+                </div>
+                <div class="scrores-line">
+                    [ <span class="team-a-scr">0</span> : <span class="team-b-scr">0</span> ] 1X2 LIVE PREDICTION
+                </div>
+            </div>
+            <div class="pb-ctrl-stake">
+                <div class="prd-btn-group">
+                    <button class="minus ctrl-btn"><i class="fa-solid fa-minus"></i></button>
+                    <span class="stake-digit">1</span>
+                    <button class="add ctrl-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="pb-calc">
+                <span class="stake-line">Stake : <span class="stk-num"></span></span>
+                <span class="total-return">Total Est. Returns : <span class="ret-num">1.00</span></span>
+            </div>
+            <div class="pb-modal-footer">
+                <button class="prd-btn-1 medium" data-bs-dismiss="modal" id="keepInSlip">keep it in betslip <i class="fa-duotone fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="playing-bet">
+    <div class="container-fluid">
+        <div class="tab-content" id="sports-tabContent" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500" data-aos-easing="ease-in">
+            <div class="tab-pane fade show active" id="sports-all" role="tabpanel" aria-labelledby="sports-all-tab">
+                <div class="accordion accordion-flush sports-accordion" id="accordion-football-matches">
+                    
+                    <div class="accordion-item single-sports-item" style="background-color: #222a4c;">
+                        <h2 class="accordion-header" id="football-matches">
+                            <button class="accordion-button sports-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-football-matches" aria-expanded="true" aria-controls="flush-football-matches">
+                                <span class="single-sports-icon">
+                                    <img src="{% static '/client/assets/img/icon/icon-1.png' %}" alt="">
+                                </span>
+                                <span class="single-sports-name">In Play Sports</span>
+                            </button>
+                        </h2>
+                        <div id="flush-football-matches" class="accordion-collapse collapse show sports-expanded-list" aria-labelledby="football-matches" data-bs-parent="#accordion-football-matches">
+                            <div class="accordion-body sports-body">
+                                <div class="playing-sports-all"> 
+                                    <div class="single-tournament">
+                                        <div class="all-tournament-match">
+                                            <div class="single-t-match" style="background-color: #4b5161;" type="button" data-bs-toggle="collapse" data-bs-target="#match_details" aria-expanded="true" aria-controls="flush-football-matches">
+                                                <div class="match-time text-center">
+                                                    <img src="{% static '/client/assets/img/playing-bet/sports-icon/football.png' %}" style="height: 50px;" alt="" srcset="">
+                                                </div>
+                                                <div class="playing-teams">
+                                                    <div class="single-team">
+                                                        <div class="team-descr">
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-3.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Dinamo Zagreb</span>
+                                                            <span class="text-light">VS</span>
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-4.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Bodo-Glimt</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-team">
+                                                        <div class="team-descr" style="color: white;">
+                                                            <span class="">China Super Leauge</span>
+                                                            <span class="">||</span>
+                                                            <span class="m-date">24 Nov</span>
+                                                            <span class="m-time">9:22 am</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="match_details" class="accordion-collapse collapse show">
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Match Result</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.55</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Half Time Results</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.8</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Total Goals</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Odd</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Even</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="all-tournament-match">
+                                            <div class="single-t-match" style="background-color: #4b5161;" type="button" data-bs-toggle="collapse" data-bs-target="#match_details2" aria-expanded="true" aria-controls="flush-football-matches">
+                                                <div class="match-time text-center">
+                                                    <img src="{% static '/client/assets/img/playing-bet/sports-icon/football.png' %}" style="height: 50px;" alt="" srcset="">
+                                                </div>
+                                                <div class="playing-teams">
+                                                    <div class="single-team">
+                                                        <div class="team-descr">
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-3.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Chennai</span>
+                                                            <span class="text-light">VS</span>
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-4.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Kolkata</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-team">
+                                                        <div class="team-descr" style="color: white;">
+                                                            <span class="">China Super Leauge</span>
+                                                            <span class="">||</span>
+                                                            <span class="">2024-04-02 7:32pm</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="match_details2" class="accordion-collapse collapse show">
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Match Result</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Half Time Results</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.8</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Total Goals</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Odd</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Even</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                        </div>
+                                                    
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item" style="background-color: #222a4c;">
+                        <h2 class="accordion-header" id="tennis-matches">
+                            <button class="accordion-button collapsed sports-header" type="button" data-bs-toggle="collapse" data-bs-target="#flush-tennis-matches" aria-expanded="false" aria-controls="flush-tennis-matches">
+                                <span class="single-sports-name">Cooming Soon Sports</span>
+                                <a href="#" class="see-all-sports-btn">See all <i class="fa-light fa-arrow-right-long"></i></a>
+                            </button>
+                        </h2>
+                        <div id="flush-tennis-matches" class="accordion-collapse collapse sports-expanded-list" aria-labelledby="tennis-matches" data-bs-parent="#accordion-football-matches">
+                            <div class="accordion-body sports-body">
+                                <div class="playing-sports-all">
+                                    <div class="single-tournament">
+
+                                        <div class="all-tournament-match">
+                                            <div class="single-t-match" style="background-color: #4b5161;" type="button" data-bs-toggle="collapse" data-bs-target="#match_details3" aria-expanded="true" aria-controls="flush-football-matches">
+                                                <div class="match-time text-center">
+                                                    <img src="{% static '/client/assets/img/playing-bet/sports-icon/football.png' %}" style="height: 50px;" alt="" srcset="">
+                                                </div>
+                                                <div class="playing-teams">
+                                                    <div class="single-team">
+                                                        <div class="team-descr">
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-3.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Dinamo Zagreb</span>
+                                                            <span class="text-light">VS</span>
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-4.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Bodo-Glimt</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-team">
+                                                        <div class="team-descr" style="color: white;">
+                                                            <span class="">China Super Leauge</span>
+                                                            <span class="">||</span>
+                                                            <span class="">2024-04-02 7:32pm</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="match_details3" class="accordion-collapse collapse show">
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Match Result</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between" type="button" data-bs-toggle="modal" data-bs-target="#betModal">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Half Time Results</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.8</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Total Goals</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Odd</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Even</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="all-tournament-match">
+                                            <div class="single-t-match" style="background-color: #4b5161;" type="button" data-bs-toggle="collapse" data-bs-target="#match_details4" aria-expanded="true" aria-controls="flush-football-matches">
+                                                <div class="match-time text-center">
+                                                    <img src="{% static '/client/assets/img/playing-bet/sports-icon/football.png' %}" style="height: 50px;" alt="" srcset="">
+                                                </div>
+                                                <div class="playing-teams">
+                                                    <div class="single-team">
+                                                        <div class="team-descr">
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-3.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Chennai</span>
+                                                            <span class="text-light">VS</span>
+                                                            <span class="team-icon">
+                                                                <img src="{% static '/client/assets/img/playing-bet/team-icon/team-4.png' %}" alt="">
+                                                            </span>
+                                                            <span class="text-light">Kolkata</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-team">
+                                                        <div class="team-descr" style="color: white;">
+                                                            <span class="">China Super Leauge</span>
+                                                            <span class="">||</span>
+                                                            <span class="">2024-04-02 7:32pm</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="match_details4" class="accordion-collapse collapse show">
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Match Result</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Half Time Results</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Dinamo Zagreb</span>
+                                                                    <span style="color: #e9cb0c;">1.8</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Draw</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Bodo-Glimt</span>
+                                                                    <span style="color: #e9cb0c;">1.2</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <table class="table table-bordered" style="border: 1px solid #293143;">
+                                                    <thead style="background-color: #293143; color: white;">
+                                                        <tr>
+                                                            <th colspan="3" class="">Total Goals</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody style="background-color: #4b5161;">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Odd</span>
+                                                                    <span style="color: #e9cb0c;">1.5</span>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span class="text-light">Even</span>
+                                                                    <span style="color: #e9cb0c;">1.9</span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            
+                                        </div>
+                                                    
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

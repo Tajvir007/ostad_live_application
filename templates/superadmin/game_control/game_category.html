@@ -1,0 +1,143 @@
+{% extends '../../superadmin/partials/base.html' %}
+
+{% block title %}Baji10 - Superadmin{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Game Category List</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'superadmin:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Game Category</li>
+          </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <button type="button" class="btn text-light" style="background-color: #6575e8;" data-bs-toggle="modal" data-bs-target="#addGameModal">+ Add New</button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table datatable table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL No.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Active Tournament</th>
+                                        <th scope="col">Active Team</th>
+                                        <th scope="col">Active Match</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Cricket</td>
+                                        <td>3</td>
+                                        <td>6</td>
+                                        <td>5</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Hockey</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-warning">deactive</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Basketball</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>Chess</td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>Football</td>
+                                        <td>4</td>
+                                        <td>12</td>
+                                        <td>9</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>Badminton</td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        
+                        
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+{% endblock %}

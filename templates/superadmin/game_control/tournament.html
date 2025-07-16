@@ -1,0 +1,129 @@
+{% extends '../../superadmin/partials/base.html' %}
+
+{% block title %}Baji10 - Superadmin{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="pagetitle">
+        <h1>Tournament</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'superadmin:dashboard' %}">Dashboard</a></li>
+            <li class="breadcrumb-item active">Tournament</li>
+          </ol>
+        </nav>
+    </div>
+
+    <section class="section">
+        <div class="row">
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <button type="button" class="btn text-light" style="background-color: #6575e8;" data-bs-toggle="modal" data-bs-target="#addGameModal">+ Add New</button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table datatable table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL No.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Basketball League</td>
+                                        <td>Basketball</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Asia Cup</td>
+                                        <td>Hockey</td>
+                                        <td>
+                                            <span class="badge bg-warning">Deactive</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>T20 WC</td>
+                                        <td>Cricket</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td>IPL</td>
+                                        <td>Cricket</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">5</th>
+                                        <td>FIFA</td>
+                                        <td>Football</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">6</th>
+                                        <td>BPL</td>
+                                        <td>Cricket</td>
+                                        <td>
+                                            <span class="badge bg-success">success</span>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-sm btn-warning m-2">Edit</button>
+                                            <button class="btn btn-sm btn-danger m-2">Delete</button>
+                                        </td> <!-- Add your action here -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        
+                        
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+{% endblock %}

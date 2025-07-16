@@ -1,0 +1,243 @@
+{% extends 'client/partials/base.html' %}
+
+{% block title %}Baji10 - Enjoy Real Betting{% endblock %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/client/dashboard/assets/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% include 'client/dashboard/header.html' %}
+
+<!-- dashboard-statics begin  -->
+<div class="dashboard-statics">
+    <div class="container">
+        <div class="row g-lg-4 g-2">
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-1.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">Main balance</span>
+                        <span class="descr">$121.20 </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-2.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">total earning</span>
+                        <span class="descr">$362.28 </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-3.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">deposit total</span>
+                        <span class="descr">$178.65 </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-4.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">total payout</span>
+                        <span class="descr">$658.14 </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-5.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">pending amount</span>
+                        <span class="descr">$571.35  </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-6.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">referral earning</span>
+                        <span class="descr">$75.20 </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-7.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">avr. odds</span>
+                        <span class="descr">322.02</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-6">
+                <div class="single-statics">
+                    <div class="part-icon">
+                        <img src="{% static '/client/dashboard/assets/img/db-statics/image-8.png' %}" alt="">
+                    </div>
+                    <div class="part-text">
+                        <span class="text">bet winning %</span>
+                        <span class="descr">65.51%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- dashboard-statics end  -->
+
+{% endblock %}
+
+{% block script %}
+
+<!-- appear js -->
+<script src="{% static '/client/dashboard/assets/js/main.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+    var options = {
+    chart: {
+        height: 276,
+        type: "area",
+        zoom: {
+        enabled: false
+        },
+        toolbar: {
+        show: false
+        }, 
+        fontFamily: 'Asap, Arial, sans-serif'
+    },
+    legend: {
+        show: false
+    },
+    grid: {
+        show: false,
+        padding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: -10
+        },  
+    },
+    dataLabels: {
+        enabled: false,
+        style: {
+        fontSize: '20px',
+        fontFamily: 'Asap, Arial, sans-serif',
+        fontWeight: 'bold',
+        colors: undefined
+    },
+    },
+    series: [
+        {
+        name: "Win",
+        data: [0, 350, 150, 300, 80, 250, 0]
+        },
+        {
+        name: "Loss",
+        data: [900, 700, 1000, 660, 880, 700, 1000]
+        },
+        {
+        name: "Profit",
+        data: [600, 220, 580, 50, 400, 800, 600]
+        }
+    ],
+    fill: {
+        type: "gradient",
+        gradient: {
+        shadeIntensity: 1,
+        opacityFrom: 0.45,
+        opacityTo: 0.1,
+        stops: [0, 90, 100]
+        }
+    },
+    xaxis: {
+        categories: [
+        "Sun",
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat"
+        ],
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                cssClass: 'apexcharts-xaxis-label',
+            },
+        },
+        axisBorder: {
+            show: false,
+            color: '#78909C',
+            offsetX: 0,
+            offsetY: 0
+        },
+    },
+    yaxis: {
+        min: 0,
+        max: 1000,
+        tickAmount: 5,
+        labels: {
+                style: {
+                colors: [],
+                fontSize: '14px',
+                fontFamily: 'Asap, Arial, sans-serif',
+                fontWeight: 500,
+                // cssClass: 'apexcharts-xaxis-label',
+                cssClass: 'noce',
+            },
+        }
+    },
+    responsive: [
+        {
+            breakpoint: 1400,
+            options: {
+                chart: {
+                    height: 256
+                },
+                legend: {
+                position: "bottom"
+                }
+            },
+        }
+    ]
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+    chart.render();
+</script>
+{% endblock %}
