@@ -1,0 +1,25 @@
+name: CI/CD pipeline installation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+    steps:
+      -name: CI/CD pipeline installation
+      run: |
+       pm2
+       
+
+
