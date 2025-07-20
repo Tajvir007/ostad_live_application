@@ -17,5 +17,4 @@ jobs:
 
       - name: Set up Python
         run: |
-          ls -l 
-          cat note.txt
+          pm2 status
